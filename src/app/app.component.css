@@ -1,0 +1,35 @@
+.default-spacer {
+  flex: 1 1 auto;
+}
+
+.header-image {
+  background-size: cover;
+}
+
+.sidenav-container {
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(111, 111, 111, 0.5);
+}
+
+.sidenav-content {
+  display: flex;
+  height: 70%;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidenav {
+  padding: 20px;
+}
+
+.source-name {
+  margin-left: 5px;
+}
+
+.list-item:hover {
+  cursor: pointer;
+  background-color: #3f51b5;
+  color: white;
+}
+

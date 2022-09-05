@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+  <button mat-button (click)="sidenav.open()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>CatchUp</span>
+  <span class="default-spacer"></span>
+  <button mat-button [matMenuTriggerFor]="appMenu">
+    <mat-icon>settings</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-menu #appMenu="matMenu">
+  <button mat-menu-item>Settings</button>
+  <button mat-menu-item>Help</button>
+</mat-menu>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav class="sidenav-content">
+    <mat-nav-list>
+      <mat-list-item *ngFor="let source of sources"
+                     (click)="searchArticlesForSource(source); sidenav.close()"
+      class="list-item">
+        <div mat-card-avatar
+             [ngStyle]="{'background-image': 'url('+source.urlToLogo+')'}"
+        class="header-image"></div>
+        <span class="source-name">{{ source.name }}</span>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <app-articles [articles]="articles"></app-articles>
+</mat-sidenav-container>
